@@ -1,12 +1,12 @@
 import { App as AntdApp, ConfigProvider } from 'antd';
 import jaJP from 'antd/locale/ja_JP';
-import { Button } from '../src/components/Button';
+import { LoginForm } from './components/LoginForm';
 
 function App() {
   return (
     <ConfigProvider locale={jaJP}>
       <AntdApp>
-        <Button children={'テスト'} type='primary'/>
+        <LoginForm />
       </AntdApp>
     </ConfigProvider>
   );
