@@ -6,7 +6,7 @@ function App() {
   return (
     <ConfigProvider locale={jaJP}>
       <AntdApp>
-        <Button />
+        <Button children={'テスト'} type='primary'/>
       </AntdApp>
     </ConfigProvider>
   );
