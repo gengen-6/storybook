@@ -1,5 +1,6 @@
 import { Form, Input } from 'antd';
 import type { InputProps } from 'antd';
+import type { CSSProperties } from 'react';
 import type {
   Control,
   FieldValues,
@@ -9,12 +10,13 @@ import { Controller } from 'react-hook-form';
 
 type Props<T extends FieldValues> = Omit<
   InputProps,
-  'defaultValue' | 'name' | 'onBlur' | 'onChange' | 'status' | 'type' | 'value'
+  'defaultValue' | 'name' | 'onBlur' | 'onChange' | 'status' | 'type' | 'value' | 'style'
 > & {
   name: Path<T>;
   label: string;
   control: Control<T>;
   type?: 'text' | 'password';
+  style?:Pick<CSSProperties, 'width' | 'height'>;
 };
 
 export const RHFInput = <T extends FieldValues>({

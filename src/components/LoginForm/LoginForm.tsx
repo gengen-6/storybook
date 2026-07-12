@@ -6,12 +6,16 @@ import { RHFInput } from '../RHFInput';
 import { loginSchema, type LoginFormValues } from './LoginForm.schema';
 
 export const LoginForm = () => {
+  //レンダーされるとuseFormが実行されて、戻り値として、control, handleSubmit, formStateを受け取っている
+  //React Hook Formがフォームの状態を管理、入力値の検証をZodのloginSchemaに任せている
   const {
     control,
     handleSubmit,
     formState: { isSubmitting },
   } = useForm<LoginFormValues>({
+    //zodResolverで入力値をloginSchemaのルールで検証する
     resolver: zodResolver(loginSchema),
+    //id, passwordの初期値を空文字に設定
     defaultValues: {
       id: '',
       password: '',
